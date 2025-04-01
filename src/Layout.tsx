@@ -10,26 +10,26 @@ const Layout = () => {
     const location = useLocation(); // Access the current location/path
 
     const isLoading = navigation.state === 'loading';
-    
+
     // Check if the current path is the home path
     const isNavHomePath = location.pathname === '/'
 
     useEffect(() => {
 
-    },[])
+    }, [])
 
     return (
-        <div className='layout-comp'>
-
+        <div className='layout-comp relative'>
+            <div className="inside"></div>
             {isLoading ? (
                 <NavbarLoading />
             ) : (
-                <Navbar/>
+                <Navbar />
             )}
 
             <main>
-                <Outlet /> 
-                {isNavHomePath && <Home />} 
+                <Outlet />
+                {isNavHomePath && <Home />}
             </main>
 
         </div>

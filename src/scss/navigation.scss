@@ -1,0 +1,94 @@
+.navbar-comp {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+    /* border-bottom: 1px solid #171717; */
+    /* box-shadow: 0px 2px 5px #171717dc; */
+
+
+    ul {
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 40px;
+            padding: 5px 10px;
+            background: #6b6b6b5f;
+            border-radius: 7.5px;
+
+            box-shadow: 0px 0px 80px #6161615e,
+                0px 3px 3px #00000091;
+
+            transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+            &:hover {
+                box-shadow: 0px 0px 60px #ffffff42,
+                    0px 1px 3px #00000091;
+
+            }
+
+            a {
+                color: #fff;
+            }
+
+            .boxR {
+                width: 10px;
+                height: 10px;
+                background: linear-gradient(45deg, #ffd601, #ffeb80);
+                margin: 0 10px;
+                border-radius: 5px;
+                animation: boxPulse 1.5s infinite ease-in-out;
+            }
+
+            &.loading {
+                /* Combine a glow animation and a flicker animation */
+                animation: navGlow 2s infinite ease-in-out, flicker 1s infinite;
+            }
+        }
+    }
+
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        background: #6b6b6b5f;
+    }
+
+    50% {
+        background: #6b6b6b1a;
+    }
+}
+
+/* New keyframes for the glowing box-shadow effect */
+@keyframes navGlow {
+
+    0%,
+    100% {
+        box-shadow: 0px 0px 80px #6161615e, 0px 3px 3px #00000091;
+    }
+
+    50% {
+        box-shadow: 0px 0px 40px #ffd601, 0px 3px 3px #00000091;
+    }
+}
+
+/* Keyframes for pulsing the inner box */
+@keyframes boxPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
